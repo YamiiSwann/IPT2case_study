@@ -257,6 +257,29 @@
     color: #00FF41; /* green from your theme */
     }
 
+    #btn-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #thankBtn {
+      font-size: 18px;
+      padding: 12px 18px;
+      border: none;
+      background: #00FF41;
+      color: black;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    #thankBtn:hover {
+      background: #00c231;
+      transform: scale(1.1);
+    }
+
     footer {
       background: #111;
       color: #bbb;
@@ -265,6 +288,7 @@
       margin-top: 50px;
       font-size: 0.9rem;
     }
+    
   </style>
 </head>
 <body>
@@ -273,7 +297,7 @@
   <header>
     <img src="https://i.postimg.cc/26s1mFgd/588fe008-a290-4bcd-b8c0-eaf0c0ede961-removebg-preview.png" alt="Profile Picture">
     <h1>Hi, I'm Dave Joshua</h1>
-    <p>Aspiring Programmer & Web Developer</p>
+    <p>Student - Web Developer</p>
 
     <!-- Contact Icons -->
     <div class="contact-icons">
@@ -307,9 +331,7 @@
     <div class="about-edu">
       <div class="about-box">
         <h3>ABOUT ME</h3>
-        <p>I’m a programming student passionate about web development and software engineering.  
-        I enjoy building projects, experimenting with new technologies, and improving my skills.  
-        My goal is to become a professional developer who creates impactful applications.</p>
+        <p>I’m a IT student that is currently studying at Tarlac State University, taking up the Bachelor of Science in Information Technology major in Web and Mobile Applications. I enjoy building projects, experimenting with new technologies, and improving my skills. My goal is to become a professional developer who creates impactful applications.</p>
       </div>
       <div class="about-box">
         <h3>EDUCATION</h3>
@@ -378,9 +400,21 @@
     </div>
   </section>
 
+  <!-- Add the button somewhere in your page -->
+  <div id="btn-container">
+    <button id="thankBtn">Click Me</button>
+  </div>
+
   <footer>
     <p>&copy; 2025 D.J.Ligsay. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    document.getElementById("thankBtn").addEventListener("click", () => {
+      alert("Thank you for visiting!");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
 
 </body>
 </html>
