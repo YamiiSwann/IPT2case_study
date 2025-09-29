@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthony's portfolio</title>
+  <style>
+
+    @keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;   /* visible */
+  }
+  25%, 75% {
+    opacity: 0.2;   /* hidden */
+  }
+}
+
+    body {
+      margin: 0;
+      background: url(https://i.pinimg.com/originals/ed/0c/c5/ed0cc5befe2fba789d5a818527aa178a.gif);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .portfolio-container {
+      background: rgba(0, 0, 0, 0.85);;
+      width: 90%;
+      max-width: 1000px;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 40px;
+      position: relative;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 30px;
+      font-family: 'Copperplate', Papyrus, fantasy;
+    }
+
+    .nav a {
+       color: #8C1007;
+      text-decoration: none;
+      font-size: 20px;
+      text-shadow: #8C1007 0 0 3px, #8C1007 0 0 100px, #ff5733 0 0 100px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .nav a:hover {
+      transform: scale(1.2);
+      text-shadow: #8C1007 0 0 100px, #8C1007 0 0 0px, #ff5733 0 0 10px;
+      animation: blink 2s infinite;
+    }
+
+    .content {
+      flex: 1;
+      display: none;
+    }
+
+    .content.active {
+      display: block;
+    }
+
+   #about {
+  height: 100%;        
+  overflow-y: auto;
+}
+
+.about-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 450px;   
+}
+
+.about-text {
+  flex: 1;
+  max-height: 100%;    
+  overflow-y: auto;   
+  box-sizing: content-box; 
+  scrollbar-width: none;
+  margin: 20px;
+}
+
+.about-text p {
+    background-color: #29303e;
+    padding-right: 20px;
+    font-size: 16px;
+    border: #111 2px solid;
+    width: fit-content;
+    margin-left: auto;
+    padding: 5px 10px; 
+    border-radius: 30px;
+    max-width: 42%;
+    text-align: left;
+    font-family:monospace;
+}
+
+.about-text h3 {
+  background-color: #37353E;
+  border: #111 2px solid;
+  width: fit-content;
+  padding: 5px 10px; 
+  border-radius: 30px;
+  max-width: 40%;
+  font-family:monospace;
+  
+}
+
+.pIMAGE {
+  margin-left: auto;
+  width: 300px;
+  height: 200px;
+  background: url(https://upload.wikimedia.org/wikipedia/en/c/c1/Silent_Hill_2_remake_cover.jpg) no-repeat center;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+
+.name {
+  color: #ff5733;
+  font-weight: bold;
+  animation: blink .01s infinite;
+  text-shadow: #8C1007 0 0 3px, #8C1007 0 0 100px, #8C1007 0 0 100px;
+}
+
+.about-gif {
+  width: 300px;
+  height: 500px;
+  background: url(https://media1.tenor.com/m/IOCEjK2tqe8AAAAd/silent-hill-silent-hill-2.gif) no-repeat center;
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 450px;   
+}
+
+.contact-gif {
+  width: 700px;
+  height: 500px;
+  background: url(https://media1.tenor.com/m/Vj3O64I-YjMAAAAd/silent-hill-silent-hill-2.gif) no-repeat center;
+  background-size: cover;
+  background-position: center;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div class="portfolio-container">
+    <div class="nav">
+      <a onclick="showContent('about')">About Me</a>
+      <a onclick="showContent('contact')">Contact</a>
+      <a href="index.html">home</a>
+    </div>
+
+    <div id="about" class="content active">
+  <div class="about-wrapper">
+    <div class="about-text">
+      <h3>what's your name?</h3>
+      <p>hmm? me?</p>
+       <h3>Yess duhh!</h3>
+       <p>Why so mean bruh?</p>  
+       <p>anyways im <span class="name">Anthony</span> </p>
+       <h3>hmm i think i heard that name before...</h3>
+       <p>u didn't</p>
+       <h3>well whatever i need you to introduce your self</h3>
+       <p>wait right now?</p>
+       <h3>yes right now is there a problem?</h3>
+       <p>no, not at all</p>
+       <h3>good now hurry up</h3>
+       <p>... name is <span class="name">Anthony Aguiflor</span> but.. you can just call me Anthony for short</p>
+       <p>and i just turned <span class="name"> 21</span> this  <span class="name">August</span></p>
+       <p>i'm currently studying BSIT in Tarlac state University </p>
+       <p>specifically web and mobile development</p>
+       <h3>wow... so are you good at it?</h3>
+       <p>nah</p>
+       <h3>what</h3>
+       <p>what</p>
+       <h3>...</h3>
+       <h3>moving on...</h3>
+       <h3>do you have any hobbies?</h3>
+       <p>what kind of question is that ofc i do!</p>
+       <h3>then what are they?</h3>
+       <p>well for starters i do know how to play guitar and i do know how to do crochet</p>
+       <h3>wow you must be so talented!</h3>
+       <p>i never said i'm good at them</p>
+       <p>well speaking of crochet i did a few small projects such as flowers, ponytails and beanie </p>
+       <p>i also love playing solo games. especially this silent hill game:</p>
+       <div class="pIMAGE"></div>
+       <p>it's one of my favorite games of all time</p>
+       <h3>well silent hill is a really good game after all</h3>
+       <h3>is this why your theme is like this?</h3>
+       <p>yes i mean just the background itself is from silent hill not to mention the landing page</p>
+       <p>aside from solo games i also plays lots of multi player games with my friend</p>
+      <h3>Like???</h3>
+      <p>ROBLOX</p>
+      <h3>and???</h3>
+      <p>thats it</p>
+      <h3>but u said lots</h3>
+      <p>well theres a lot to play in roblox right?</p>
+      <h3>i guess...</h3>
+      <h3>anything else?</h3>
+      <p>I also play gacha games like genshin, wuwa and nikke</p>
+      <h3>ew</h3>
+      <p>wha-</p>
+      <h3>just kidding</h3>
+      <p>and... thats all you need to know abt me</p>
+    </div>
+    <div class="about-gif"></div>
+  </div>
+</div>
+
+
+
+    <div id="contact" class="content">
+  <div class="contact-wrapper">
+    <div class="contact-text">
+      <p>Email: <a href="a.aguiflor00895@student.tsu.edu.ph">a.aguiflor00895@student.tsu.edu.ph</a></p>
+      <p>Discord: YamiiSan</p>
+      <p>contact no. 09999412856</p>
+    </div>
+    <div class="contact-gif"></div>
+  </div>
+</div>
+
+  <script>
+    function showContent(id) {
+      document.querySelectorAll('.content').forEach(div => {
+        div.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
