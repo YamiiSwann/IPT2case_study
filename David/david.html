@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David's Portfolio</title>
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url(https://i.pinimg.com/originals/ed/0c/c5/ed0cc5befe2fba789d5a818527aa178a.gif);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center;
+      backdrop-filter: blur(3px);
+      height: 100%;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .portfolio-container {
+      width: 90%;
+      max-width: 1000px;
+      min-height: 500px;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 40px;
+      position: relative;
+    }
+
+    .navigation-bar {
+      display: flex;
+      justify-content: left;
+      gap: 40px;
+      margin-bottom: 30px;
+      font-family: 'Pixelify Sans', sans-serif;
+    }
+
+    .navigation-bar a {
+      color: #e21335;
+      text-decoration: none;
+      font-size: 20px;
+      text-shadow: #60626d 0 0 3px, #0b104d 0 0 100px, #112a4b 0 0 100px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .navigation-bar a:hover {
+      transform: scale(1.2);
+      text-shadow: #24081b 0 0 100px, #440c33 0 0 0px, #e63fb4 0 0 10px;
+    }
+
+    .about {
+      flex: 1;
+      display: none;
+    }
+
+    .about.active {
+      display: block;
+    }
+
+    .about-wrapper {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      height: 450px;   
+    }
+
+    .profile-side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;       
+      text-align: center;
+      margin-right: 20px;
+      max-width: 200px;
+      gap: 10px;
+      flex: 0 0 180px; 
+    }
+
+    .side-profile {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;           
+      border-radius: 50%;          
+      margin-right: 20px;
+      margin-left: 20px;          
+      border: 3px solid #e21335;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .profile-info{
+      display: flex;
+      flex-direction: column;     
+      justify-content: center;   
+    }
+
+    .profile-student {
+      font-size: 13px;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .profile-name {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 4px 0;
+      color: #e21335;
+    }
+
+    .profile-age_course {
+      font-size: 13px;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .about-text {
+      flex: 1;
+      max-height: 100%;    
+      overflow-y: auto;   
+      box-sizing: content-box; 
+      margin: 20px;
+      flex: 1;
+      text-align: justify;
+    }
+
+    .about-text h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #e21335;  
+      text-transform: uppercase;
+      border-bottom: 2px solid #e21335;
+      padding-bottom: 5px;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      margin-bottom: 12px;            
+      font-weight: 500;
+      margin-right: 30px;
+    }
+
+    .about-text a {
+      color: #7dcfff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .about-text a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+</style>
+</head>
+<body>
+
+  <div id="portfolio-container" class="portfolio-container">
+    <div class="navigation-bar">
+      <a onclick="showcontent('about')">About Me</a>
+      <a href="index.html">Home</a>
+    </div>
+
+    <div id="about" class="content active">
+      <div class="about-wrapper">
+
+        <div class="profile-side">
+        <img src="main.jpg" class="side-profile" alt="Ronjean F. David">
+        <div class="profile-info">
+        <p class="profile-student">Student - Tarlac State University</p>
+        <h2 class="profile-name">Ronjean F. David</h2>
+        <p class="profile-age_course">21 years old - BSIT (Web & Mobile Applications)</p>
+        </div>
+        </div>
+
+        <div class="about-text">
+          <h2>Profile</h2>
+          <p>Hi my name is Ronjean F. David, and I am 21 years old. I am currently studying at Tarlac State University, 
+             taking up a Bachelor of Science in Information Technology major in Web and Mobile Applications.
+             My hobbies are playing games, sleeping and going to gym. 
+            Doing my studies and hobbies makes me stay motivated and productive.
+          </p>
+          <h2>Contacts</h2>
+          <p>Email: davixronjean@gmail.com</p>
+          <p>Discord: Jinx.</p>
+          <p>Contact Number: 09491851799</p>
+          <p>Facebook: <a href="https://www.facebook.com/ronjean.david" style="color: #e21335;">Ronjean David</a></p>
+        </div>
+      </div>
+    </div>
+  
+  <script>
+
+    function showcontent(id) {
+      document.querySelectorAll('.content').forEach(div => {
+        div.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+
+  </script>
+</body>
+</html>
