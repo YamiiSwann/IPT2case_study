@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DreamTeam</title>
+
+  <style>
+    @font-face {
+  font-family: Myfont;
+  src: url("./fonts/SLNTHLN.woff2") format("woff2"),
+       url("./fonts/SLNTHLN.woff") format("woff"),
+       url("./fonts/SLNTHLN.ttf") format("truetype");
+}
+
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;   /* visible */
+  }
+  25%, 75% {
+    opacity: 0.7;   /* hidden */
+  }
+}
+
+
+    body {
+      margin: 0;
+      background: #1f2123;
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     }
+
+
+    .bar {
+      position: fixed;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      background: black;
+      z-index: 1000;
+    }
+
+    .bar.top{
+      top: 0;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+         }
+
+    .bar.bottom {
+  bottom: 0;
+  height: 120px;
+  overflow: hidden;       /* hides overflow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-container {
+  display: flex;
+  flex-direction: column;
+  animation: flowDown 180s linear infinite;
+  justify-content: center;
+  align-items: center;
+  animation-delay: -40s;
+}
+
+.scroll-container p {
+  font-family: Copperplate, Papyrus, fantasy;
+  font-size: 15px;
+  color: white;
+  text-shadow: #8C1007 0 0 3px, #8C1007 0 0 40px, #ff5733 0 0 40px;
+  margin: 0px 0;
+  letter-spacing: 15px;
+}
+
+@keyframes flowDown {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+
+    .TITLE {
+      font-family:Myfont;
+      font-size: 30px;
+      color: white;
+      text-align: center;
+      line-height: 120px;
+      text-shadow: #8C1007 0 0 3px, #8C1007 0 0 100px, #ff5733 0 0 100px;
+      letter-spacing: 35px;
+    }
+
+    .content {
+      background-image: url("https://media1.tenor.com/m/2dg7Il-Ck_AAAAAd/silent-hill-silent-hill-2.gif");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover; /* fills the whole screen */
+      justify-content: center;
+      align-items: center;
+      display: flex;
+
+      width: 100%;
+      height: 100%;
+    }
+
+    .SELECTION {
+      width: 1000px;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+    }
+
+    .button {
+      font-family:Copperplate, Papyrus, fantasy;
+      font-size: 20px;
+      font-weight: bold;
+      color: #A3291F;
+      background: transparent;
+      padding: 40px 40px;
+      cursor: pointer;
+      text-shadow: #8C1007 0 0 3px, #8C1007 0 0 100px, #ff5733 0 0 100px;
+      border: none;
+      letter-spacing: 25px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .button:hover {
+       transform: scale(1.2);
+       color: #BA4237;
+      text-shadow: #8C1007 0 0 100px, #8C1007 0 0 0px, #ff5733 0 0 10px;
+      animation: blink 2s infinite;
+    }
+
+    .selections {
+      display: inline-block;
+      opacity: 0;
+      transform: translateX(-15px);
+      transition: all 0.32s ease-in-out;
+      visibility: hidden;
+    }
+    
+    .button:hover .selections{
+      opacity: 1;
+      transform: translateX(0);
+      visibility: visible;
+    }
+   
+
+  </style>
+
+
+
+
+</head>
+<body>
+  <div class="bar top"><h1 class="TITLE">-CONTROLLED INSANITY-</h1></div>
+  <div class="bar bottom">
+  <div class="scroll-container">
+
+<p>You made me happy.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>James...</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>That's why I want you to live for yourself now. Do what's best for you, James.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>You've given me so much and I haven't been able to return a single thing.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>These last few years since I became ill... I'm so sorry for what I did to you, did to us...</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>I can't tell you to remember me, but I can't bear for you to forget me.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>That means that as you read this, I'm already dead.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>I told the nurse to give this to you after I'm gone.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>Well, this letter has gone on too long, so I'll say goodbye.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>I still wouldn't trade it for the world. We had some wonderful years together.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>Even though our life together had to end like this,</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>I'll always love you.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>But I want you to know this, James.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>That's why I understand if you do hate me.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>I was so angry all the time and I struck out at everyone I loved most. Especially you, James.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>When I first learned that I was going to die, I just didn't want to accept it.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>I'm sorry about that.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>I don't know if you hate me or pity me... Or maybe I just disgust you...</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>Whenever you come see me, I can tell how hard it is on you...</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>But I'm afraid, James. I'm afraid you don't really want me to come home.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>Even so, I'm glad to be coming home. I've missed you terribly.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>I think you know what I mean...</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>It’s not that I'm getting better. It’s just that this may be my last chance...</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>The doctor came today. He told me I could go home for a short stay.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>and all I can think about is how unfair it all is...</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>Every day I stare up at the cracks in the ceiling</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>I feel so pathetic and ugly laying here, waiting for you...</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>I wish I could change that, but I can't.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>I know I've done a terrible thing to you. Something you'll never forgive me for.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>And so I wait, wrapped in my cocoon of pain and loneliness.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>But you never do.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>Waiting for you to come to see me.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>Well, I'm alone there now... In our 'special place'... Waiting for you...</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>You promised me you'd take me there again someday. But you never did.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>Silent Hill.</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>In my restless dream, I see that town.</p>
+
+  </div>
+</div>
+
+  <div class="content">
+    <div class="SELECTION">
+      
+      <a href="anthony.html">
+        <button class="button anthony"><span class="selections">></span>ANTHONY</button>
+      </a>
+      <a href="#">
+        <button class="button ronjean"><span class="selections">></span>RONJEAN</button>
+      </a>
+      <a href="ligsay.html">
+        <button class="button dave"><span class="selections">></span>DAVE</button>
+      </a>
+      <a href="#">
+        <button class="button andrei"><span class="selections">></span>ANDREI</button>
+      </a>
+
+    </div>
+  </div>
+
+</body>
+</html>
