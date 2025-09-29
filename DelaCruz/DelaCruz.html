@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andrei's Profile</title>
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url(https://media1.tenor.com/m/UqH7Z-6qQScAAAAC/minecraft.gif);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center;
+      height: 100%;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .portfolio-container {
+      background: rgba(0, 0, 0, 0.85);;
+      width: 90%;
+      max-width: 1000px;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 40px;
+      position: relative;
+    }
+
+    .navigation-bar {
+      display: flex;
+      justify-content: left;
+      gap: 40px;
+      margin-bottom: 30px;
+      font-family: 'Pixelify Sans', sans-serif;
+    }
+
+    .navigation-bar a {
+      color: #e459c6;
+      text-decoration: none;
+      font-size: 20px;
+      text-shadow: #60626d 0 0 3px, #0b104d 0 0 100px, #112a4b 0 0 100px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .navigation-bar a:hover {
+      transform: scale(1.2);
+      text-shadow: #24081b 0 0 100px, #440c33 0 0 0px, #e63fb4 0 0 10px;
+    }
+
+    .about {
+      flex: 1;
+      display: none;
+    }
+
+    .about.active {
+      display: block;
+    }
+
+    .about-wrapper {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      height: 450px;   
+    }
+
+    .profile-side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;       
+      text-align: center;
+      margin-right: 20px;
+      max-width: 200px;
+      gap: 10px;
+      flex: 0 0 180px; 
+    }
+
+    .side-profile {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;           
+      border-radius: 50%;          
+      margin-right: 20px;
+      margin-left: 20px;          
+      border: 3px solid #f872cb;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .profile-info{
+      display: flex;
+      flex-direction: column;     
+      justify-content: center;   
+    }
+
+    .profile-student {
+      font-size: 13px;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .profile-name {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 4px 0;
+      color: #f872cb;
+    }
+
+    .profile-age_course {
+      font-size: 13px;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .about-text {
+      flex: 1;
+      max-height: 100%;    
+      overflow-y: auto;   
+      box-sizing: content-box; 
+      margin: 20px;
+      flex: 1;
+      text-align: justify;
+    }
+
+    .about-text::-webkit-scrollbar {
+      width: 0;              
+      height: 0;
+    }
+
+    .about-text h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #f872cb;   
+      text-transform: uppercase;
+      border-bottom: 2px solid #f872cb;
+      padding-bottom: 5px;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      margin-bottom: 12px;            
+      font-weight: 500;
+      margin-right: 30px;
+    }
+
+    .about-text a {
+      color: #7dcfff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .about-text a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+</style>
+</head>
+<body>
+
+  <div id="portfolio-container" class="portfolio-container">
+    <div class="navigation-bar">
+      <a onclick="showcontent('about')">About Me</a>
+      <a href="index.html">Home</a>
+    </div>
+
+    <div id="about" class="content active">
+      <div class="about-wrapper">
+
+        <div class="profile-side">
+        <img src="andrei 1x1.jpg" class="side-profile" alt="Andrei Dela Cruz">
+        <div class="profile-info">
+        <p class="profile-student">Student - Tarlac State University</p>
+        <h2 class="profile-name">Andrei Dela Cruz</h2>
+        <p class="profile-age_course">21 years old - BSIT (Web & Mobile Applications)</p>
+        </div>
+        </div>
+
+        <div class="about-text">
+          <h2>Profile</h2>
+          <p>My name is Andrei Dela Cruz, and I am 21 years old. I am currently studying at Tarlac State University, 
+             taking up a Bachelor of Science in Information Technology major in Web and Mobile Applications.
+             My hobbies include playing games with friends, sleeping, exercising, and having fun during my free time. 
+             I enjoy spending time with people who share the same interests as me. 
+             Balancing my studies and hobbies helps me stay motivated and productive.
+          </p>
+          <h2>Contacts</h2>
+          <p>Email: delacruzandrei908@gmail.com</p>
+          <p>Contact Number: 09478292792</p>
+          <p>Facebook: <a href="https://www.facebook.com/andrei.delacruz.39589/">Andrei Delacruz</a></p>
+
+          <h2>Skills</h2>
+          <p><ul>
+            <li>Empathy and teamwork</li>  
+            <li>Communication and collaboration</li>
+            <li>Adaptability and quick learning</li>
+            <li>Integrity & justice</li>
+          </ul></p>
+        </div>
+      </div>
+    </div>
+  
+  <script>
+
+    function showcontent(id) {
+      document.querySelectorAll('.content').forEach(div => {
+        div.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+
+  </script>
+</body>
+</html>
