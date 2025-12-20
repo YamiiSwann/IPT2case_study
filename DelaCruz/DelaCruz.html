@@ -8,29 +8,37 @@
     body {
       margin: 0;
       padding: 0;
-      background: url(https://media1.tenor.com/m/UqH7Z-6qQScAAAAC/minecraft.gif);
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
+      background: radial-gradient(circle, #050505, #000000);
+      background-image: url("https://media1.tenor.com/m/MZWtO8vKqQIAAAAd/awsan-resident-evil.gif");
+      background-size: cover;
       background-position: center;
-      height: 100%;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      overflow: hidden;
+      color: #e6e6e6;
+      font-family: 'Courier New', monospace;
+      overflow-y: auto;
+      overflow-x: hidden;
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
+      align-items: flex-start;
+      min-height: 100vh;
     }
 
     .portfolio-container {
-      background: rgba(0, 0, 0, 0.85);;
+      background: rgba(0, 0, 0, 0.9);
       width: 90%;
+      position: relative;
       max-width: 1000px;
       min-height: 600px;
-      display: flex;
-      flex-direction: column;
       padding: 20px 40px;
-      position: relative;
+      border: 2px solid darkred;
+      box-shadow: 0 0 40px darkred;
+      animation: flicker 3s infinite;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.96; }
+      70% { opacity: 0.92; }
+      100% { opacity: 1; }
     }
 
     .navigation-bar {
@@ -42,17 +50,16 @@
     }
 
     .navigation-bar a {
-      color: #e459c6;
-      text-decoration: none;
+      color: darkred;
       font-size: 20px;
-      text-shadow: #60626d 0 0 3px, #0b104d 0 0 100px, #112a4b 0 0 100px;
-      cursor: pointer;
-      transition: transform 0.3s ease-in-out;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-shadow: 0 0 5px red;
     }
 
     .navigation-bar a:hover {
-      transform: scale(1.2);
-      text-shadow: #24081b 0 0 100px, #440c33 0 0 0px, #e63fb4 0 0 10px;
+      color: crimson;
+      text-shadow: 0 0 15px red;
     }
 
     .about {
@@ -86,13 +93,12 @@
     .side-profile {
       width: 130px;
       height: 130px;
-      object-fit: cover;           
-      border-radius: 50%;          
-      margin-right: 20px;
-      margin-left: 20px;          
-      border: 3px solid #f872cb;
-      margin-bottom: 10px;
-      display: block;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid darkred;
+      box-shadow: 0 0 25px darkred;
+      filter: grayscale(40%) contrast(120%);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .profile-info{
@@ -108,10 +114,12 @@
     }
 
     .profile-name {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 600;
       margin: 4px 0;
-      color: #f872cb;
+      color: darkred;
+      text-shadow: 0 0 8px red;    
+      letter-spacing: 2px;
     }
 
     .profile-age_course {
@@ -135,20 +143,23 @@
       height: 0;
     }
 
+    
     .about-text h2 {
-      font-size: 24px;
-      margin-bottom: 10px;
-      color: #f872cb;   
+      color: crimson;
+      border-bottom: 1px solid darkred;
       text-transform: uppercase;
-      border-bottom: 2px solid #f872cb;
-      padding-bottom: 5px;
+      letter-spacing: 3px;
+      cursor: pointer;
     }
 
-    .about-text p {
-      font-size: 16px;
-      margin-bottom: 12px;            
-      font-weight: 500;
-      margin-right: 30px;
+    .about-text p,
+    .about-text li {
+      color: #ccc;
+      line-height: 1.7;
+    }
+    
+    .about-text ul {
+      list-style: square;
     }
 
     .about-text a {
@@ -163,6 +174,56 @@
       text-decoration: underline;
     }
 
+    .horror-btn {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: transparent;
+      border: 2px solid darkred;
+      padding: 12px 30px;
+      color: crimson;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      box-shadow: 0 0 15px darkred;
+      transition: all 0.3s ease;
+    }
+
+    .horror-btn:hover {
+      background: darkred;
+      color: #000;
+      box-shadow: 0 0 30px red;
+      transform: translateX(-50%) scale(1.05);
+    }
+
+    .horror-btn:active {
+      transform: translateX(-50%) scale(0.95);
+    }
+
+    .api-content {
+      margin-top: 20px;
+      padding-bottom: 90px;
+      text-align: center;
+    }
+
+    .poster {
+      display: none;
+      width: 200px;
+      margin: 10px auto;
+      box-shadow: 0 0 20px darkred;
+    }
+
+    .description {
+      max-width: 700px;
+      margin: 10px auto;
+      line-height: 1.6;
+      color: #ccc;
+       max-height: 120px;
+      overflow-y: auto;
+      padding-right: 5px;
+    }
 </style>
 </head>
 <body>
@@ -209,15 +270,128 @@
       </div>
     </div>
   
-  <script>
+    <button class="horror-btn" onclick="fetchData()">Random Horror Movies</button>
+    
+    <div class="api-content">
+      <img id="poster">
+      <p id="id"></p>
+      <h1 id="title"></h1>
+      <p id="year"></p>  
+      <p id="description"></p>
+    </div>
 
-    function showcontent(id) {
-      document.querySelectorAll('.content').forEach(div => {
-        div.classList.remove('active');
+<script>
+  const headers = document.querySelectorAll(".about-text h2");
+  headers.forEach(header => {
+    const content = [];
+    let next = header.nextElementSibling;
+    while (next && next.tagName !== "H2") {
+      content.push(next);
+      next = next.nextElementSibling;
+    }
+    content.forEach(el => {
+      el.style.maxHeight = "0";
+      el.style.overflow = "hidden";
+      el.style.transition = "max-height 0.5s ease, opacity 0.3s ease";
+      el.style.opacity = "0";
+    });
+    header.addEventListener("click", () => {
+      const isOpen = content[0].style.maxHeight !== "0px";
+      content.forEach(el => {
+        if (isOpen) {
+          el.style.maxHeight = "0";
+          el.style.opacity = "0";
+        } else {
+          el.style.maxHeight = "500px";
+          el.style.opacity = "1";
+        }
       });
-      document.getElementById(id).classList.add('active');
+    });
+  });
+</script>
+
+<script>
+  setInterval(() => {
+    document.body.style.filter = "brightness(70%) contrast(140%)";
+    document.body.style.transform = "translateX(1px)";
+    setTimeout(() => {
+      document.body.style.filter = "none";
+      document.body.style.transform = "none";
+    }, 80);
+  }, 4000);
+</script>
+
+<script>
+  function showcontent(id) {
+    document.querySelectorAll('.content').forEach(div => {
+      div.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+  }
+  
+  const header = document.querySelectorAll(".about-text h2");
+  headers.forEach(header => {
+    let next = header.nextElementSibling;
+    const section = [];
+
+    while (next && next.tagName !== "H2") {
+      section.push(next);
+      next = next.nextElementSibling;
     }
 
-  </script>
+    section.forEach(el => {
+      el.style.display = "none";
+      el.style.opacity = "0";
+    });
+
+    header.addEventListener("click", () => {
+      section.forEach(el => {
+        if (el.style.display === "none") {
+          el.style.display = "block";
+          setTimeout(() => el.style.opacity = "1", 50);
+        } else {
+          el.style.opacity = "0";
+          setTimeout(() => el.style.display = "none", 300);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  const options = {
+    method: 'GET',
+      headers: {
+        'x-rapidapi-key': '0410040e5bmsh78240858d6d0a5dp1891e8jsn4efb57d6166b',
+        'x-rapidapi-host': 'horror-archive1.p.rapidapi.com'
+      }
+    };
+        async function fetchData() {
+      try {
+        const random = Math.floor(Math.random() * 1000) + 1;
+        const url = `https://horror-archive1.p.rapidapi.com/item/?id=${random}`;
+
+        const response = await fetch(url, options);
+        const data = await response.json();
+
+        document.getElementById("id").textContent =
+          data?.item?.id ? `ID: ${data.item.id}` : "";
+
+        document.getElementById("title").textContent =
+          data?.item?.title ? `Title: ${data.item.title}` : "Title: N/A";
+
+        document.getElementById("year").textContent =
+          data?.item?.year ? `Year: ${data.item.year}` : "Year: N/A";
+
+        document.getElementById("description").textContent =
+          data?.item?.description
+            ? `Description: ${data.item.description}`
+            : "Description: Not available";
+
+          } catch (error) {
+      console.error("API Error:", error);
+    }
+  }
+</script>
 </body>
 </html>
