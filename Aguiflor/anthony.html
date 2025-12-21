@@ -134,13 +134,24 @@
   text-shadow: #8C1007 0 0 3px, #8C1007 0 0 100px, #8C1007 0 0 100px;
 }
 
-.about-gif {
-  width: 300px;
-  height: 500px;
-  background: url(https://media1.tenor.com/m/IOCEjK2tqe8AAAAd/silent-hill-silent-hill-2.gif) no-repeat center;
-  background-size: cover;
-  background-position: center;
-}
+
+    .about-gif {
+      width: 300px;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      background-color: #111;
+      overflow: hidden;
+    }
+
+
+    .about-gif img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
 
 .contact-wrapper {
   display: flex;
@@ -222,7 +233,12 @@
       <h3>just kidding</h3>
       <p>and... thats all you need to know abt me</p>
     </div>
-    <div class="about-gif"></div>
+    
+    
+    <div class="about-gif">
+          <img id="character" alt="Genshin Character">
+        </div>
+        
   </div>
 </div>
 
@@ -246,6 +262,29 @@
       });
       document.getElementById(id).classList.add('active');
     }
+
+async function getCharacter() {
+      try {
+        const res = await fetch("https://genshin.jmp.blue/characters/");
+        const list = await res.json();
+
+        const name = list[Math.floor(Math.random() * list.length)];
+        const img = document.getElementById("character");
+        const label = document.getElementById("Character");
+
+        img.src = `https://genshin.jmp.blue/characters/${name}/portrait`;
+        label.textContent = `Genshin Character: ${name}`;
+
+        img.onerror = () => {
+          img.style.display = "none";
+          label.textContent = "Character unavailable";
+        };
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", getCharacter);
   </script>
 
 </body>
